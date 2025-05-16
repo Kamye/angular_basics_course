@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: ` <div class="app">Hello Angular!</div> `,
+  template: `
+  <div class="app">
+    <app-donut-list></app-donut-list>
+  </div> `,
   styles: [
     `
       .app {
@@ -14,8 +17,6 @@ import { Component, OnInit } from '@angular/core';
     `,
   ],
 })
-export class AppComponent implements OnInit {
-  ngOnInit() {
-    console.log('Hello World!');
-  }
+export class AppComponent {
+
 }
