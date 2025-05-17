@@ -7,9 +7,7 @@ import { Donut } from "../../models/donut.model";
   template: `
     <div
       class="donut-card"
-      [ngStyle]="{
-        border: donut.promo ? '2px solid #eee' : 'none'
-      }"
+      [class.donut-card-promo]="donut.promo"
     >
       <img
         src="/assets/img/{{ donut.icon }}.svg"
@@ -49,6 +47,9 @@ import { Donut } from "../../models/donut.model";
         &-icon {
           width: 50px;
           margin-right: 10px;
+        }
+        &-promo {
+          border: 2px solid #eee;
         }
       }
     `
