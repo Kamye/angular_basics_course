@@ -34,6 +34,7 @@ export class DonutListComponent implements OnInit {
         name: 'Glazed Fudge',
         icon: 'glazed-fudge',
         price: 167,
+        promo: true,
         description: 'For the glaze enjoy.'
       },
       {
