@@ -8,9 +8,11 @@ import { DonutCardComponent } from "../../components/donut-card/donut-card.compo
     imports: [DonutCardComponent],
     template: `
       <div>
-        <app-donut-card [donut]="donuts[0]"></app-donut-card>
-        <app-donut-card [donut]="donuts[1]"></app-donut-card>
-        <app-donut-card [donut]="donuts[2]"></app-donut-card>
+        @if (donuts.length) {
+          <app-donut-card [donut]="donuts[0]"></app-donut-card>
+          <app-donut-card [donut]="donuts[1]"></app-donut-card>
+          <app-donut-card [donut]="donuts[2]"></app-donut-card>
+        }
       </div>
     `,
     styles: [],
