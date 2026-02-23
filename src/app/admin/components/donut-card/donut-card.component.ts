@@ -3,8 +3,8 @@ import { Component, Input } from '@angular/core';
 import { Donut } from "../../models/donut.model";
 
 @Component({
-  selector: 'app-donut-card',
-  template: `
+    selector: 'app-donut-card',
+    template: `
     <div
       class="donut-card"
       [ngClass]="{
@@ -26,8 +26,8 @@ import { Donut } from "../../models/donut.model";
       </div>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .donut-card {
         display: flex;
         align-items: center;
@@ -55,7 +55,8 @@ import { Donut } from "../../models/donut.model";
         }
       }
     `
-  ]
+    ],
+    standalone: false
 })
 export class DonutCardComponent {
   @Input() donut!: Donut;

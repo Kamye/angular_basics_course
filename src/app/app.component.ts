@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  template: `
+    selector: 'app-root',
+    template: `
   <div class="app">
     <header class="header">
       <img
@@ -13,8 +13,8 @@ import { Component } from '@angular/core';
     </header>
     <app-donut-list></app-donut-list>
   </div> `,
-  styles: [
-    `
+    styles: [
+        `
       .app {
         background: #fff;
         border-radius: 8px;
@@ -33,7 +33,8 @@ import { Component } from '@angular/core';
         height: 88px;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class AppComponent {
 

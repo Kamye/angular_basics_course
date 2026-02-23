@@ -3,16 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { Donut } from '../../models/donut.model'
 
 @Component({
-  selector: 'app-donut-list',
-  template: `
+    selector: 'app-donut-list',
+    template: `
     <div>
       <app-donut-card [donut]="donuts[0]"></app-donut-card>
       <app-donut-card [donut]="donuts[1]"></app-donut-card>
       <app-donut-card [donut]="donuts[2]"></app-donut-card>
     </div>
   `,
-  styles: [
-  ]
+    styles: [],
+    standalone: false
 })
 export class DonutListComponent implements OnInit {
   donuts!: Donut[];
