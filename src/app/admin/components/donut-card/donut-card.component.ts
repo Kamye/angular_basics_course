@@ -1,31 +1,34 @@
 import { Component, Input } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
+
 import { Donut } from "../../models/donut.model";
 
 @Component({
     selector: 'app-donut-card',
+    imports: [CommonModule],
     template: `
-    <div
-      class="donut-card"
-      [ngClass]="{
-        'donut-card-promo': donut.promo
-      }"
-    >
-      <img
-        src="/assets/img/{{ donut.icon }}.svg"
-        [alt]="donut.name"
-        class="donut-card-icon"
-      />
-      <div>
-        <p class="donut-card-name">
-          {{ donut.name }}
-        </p>
-        <p class="donut-card-price">
-          {{ donut.price / 100 | currency: 'USD':'symbol' }}
-        </p>
+      <div
+        class="donut-card"
+        [ngClass]="{
+          'donut-card-promo': donut.promo
+        }"
+      >
+        <img
+          src="/assets/img/{{ donut.icon }}.svg"
+          [alt]="donut.name"
+          class="donut-card-icon"
+        />
+        <div>
+          <p class="donut-card-name">
+            {{ donut.name }}
+          </p>
+          <p class="donut-card-price">
+            {{ donut.price / 100 | currency: 'USD':'symbol' }}
+          </p>
+        </div>
       </div>
-    </div>
-  `,
+    `,
     styles: [
         `
       .donut-card {
@@ -56,7 +59,7 @@ import { Donut } from "../../models/donut.model";
       }
     `
     ],
-    standalone: false
+    standalone: true
 })
 export class DonutCardComponent {
   @Input() donut!: Donut;

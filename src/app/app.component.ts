@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 
+import { DonutListComponent } from "./admin/containers/donut-list/donut-list.component";
+
 @Component({
     selector: 'app-root',
+    imports: [DonutListComponent],
     template: `
   <div class="app">
     <header class="header">
@@ -34,7 +37,7 @@ import { Component } from '@angular/core';
       }
     `,
     ],
-    standalone: false
+    standalone: true
 })
 export class AppComponent {
 

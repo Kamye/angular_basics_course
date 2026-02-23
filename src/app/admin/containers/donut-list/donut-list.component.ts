@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Donut } from '../../models/donut.model'
+import { DonutCardComponent } from "../../components/donut-card/donut-card.component";
 
 @Component({
     selector: 'app-donut-list',
+    imports: [DonutCardComponent],
     template: `
-    <div>
-      <app-donut-card [donut]="donuts[0]"></app-donut-card>
-      <app-donut-card [donut]="donuts[1]"></app-donut-card>
-      <app-donut-card [donut]="donuts[2]"></app-donut-card>
-    </div>
-  `,
+      <div>
+        <app-donut-card [donut]="donuts[0]"></app-donut-card>
+        <app-donut-card [donut]="donuts[1]"></app-donut-card>
+        <app-donut-card [donut]="donuts[2]"></app-donut-card>
+      </div>
+    `,
     styles: [],
-    standalone: false
+    standalone: true
 })
 export class DonutListComponent implements OnInit {
   donuts!: Donut[];
