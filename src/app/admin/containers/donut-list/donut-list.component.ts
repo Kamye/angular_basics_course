@@ -10,9 +10,15 @@ import { DonutCardComponent } from "../../components/donut-card/donut-card.compo
     template: `
       <div>
         @if (donuts.length) {
-          <app-donut-card [donut]="donuts[0]"></app-donut-card>
-          <app-donut-card [donut]="donuts[1]"></app-donut-card>
-          <app-donut-card [donut]="donuts[2]"></app-donut-card>
+          @for (
+            donut of donuts;
+            track donut.id;
+            let i = $index;
+            let isOdd = $odd;
+            let isEven = $even
+          ) {
+            <app-donut-card [donut]="donut"></app-donut-card>
+          }
         } @else {
           <p>No Donuts here...</p>
         }
