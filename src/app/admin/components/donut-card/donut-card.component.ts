@@ -22,6 +22,17 @@ import { Donut } from "../../models/donut.model";
         <div>
           <p class="donut-card-name">
             {{ donut.name }}
+            @switch (donut.promo) {
+              @case ('new') {
+                <span class="donut-card-label">NEW</span>
+              }
+              @case ('limited') {
+                <span class="donut-card-label">LIMITED</span>
+              }
+              @default {
+                <span class="donut-card-label">Nothing special...</span>
+              }
+            }
           </p>
           <p class="donut-card-price">
             {{ donut.price / 100 | currency: 'USD':'symbol' }}
@@ -44,6 +55,14 @@ import { Donut } from "../../models/donut.model";
         }
         &-name {
           font-size: 16px;
+        }
+        &-label {
+          border: 2px solid #c14583;
+          border-radius: 4px;
+          padding: 0 4px;
+          margin-left: 5px;
+          font-size: 12px;
+          color: #c14583;
         }
         &-price {
           font-size: 14px;
