@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { Donut } from '../../models/donut.model'
 import { DonutCardComponent } from "../../components/donut-card/donut-card.component";
 
 @Component({
     selector: 'app-donut-list',
-    imports: [DonutCardComponent],
+    imports: [DonutCardComponent, CommonModule],
     template: `
       <div>
         @if (donuts.length) {
           <app-donut-card [donut]="donuts[0]"></app-donut-card>
           <app-donut-card [donut]="donuts[1]"></app-donut-card>
           <app-donut-card [donut]="donuts[2]"></app-donut-card>
+        } @else {
+          <p>No Donuts here...</p>
         }
       </div>
     `,
